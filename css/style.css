@@ -7,27 +7,27 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 90%; /* Reduzir a largura para que o conteúdo se ajuste melhor em dispositivos móveis */
+    width: 90%;
     text-align: center;
-    padding-top: 30px; /* Diminuir o espaçamento superior */
+    padding-top: 30px;
+}
+#sim-btn {
+    margin-right: 500px; /* Adiciona margem à direita para separar os botões */
 }
 
 h1 {
-    font-size: 2rem; /* Reduzir o tamanho do título para dispositivos móveis */
-    
+    font-size: 2rem;
     color: #333;
-    
 }
 
-
 button {
-    padding: 8px 16px; /* Reduzir o preenchimento dos botões */
+    padding: 9px 16px;
     margin: 10px;
     cursor: pointer;
     border: none;
     outline: none;
     border-radius: 5px;
-    font-size: 1rem; /* Reduzir o tamanho da fonte dos botões */
+    font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -37,18 +37,30 @@ button:hover {
     color: #ffffff;
 }
 
-/* Adicionar uma consulta de mídia para dispositivos móveis */
+#nao-btn {
+    margin-left: 20px;
+    position: absolute;
+    left: calc(100% * var(--x));
+    top: calc(100% * var(--y));
+    transition: left 0.5s, top 0.5s;
+}
+
+:root {
+    --x: 0;
+    --y: 0;
+}
+
 @media screen and (max-width: 768px) {
     .container {
-        width: 100%; /* A largura total para dispositivos móveis */
+        width: 100%;
     }
 
     h1 {
-        font-size: 1.9rem; /* Reduzir ainda mais o tamanho do título para dispositivos móveis */
+        font-size: 1.9rem;
     }
 
     button {
-        padding: 12px 24px; /* Reduzir ainda mais o preenchimento dos botões */
-        font-size: 0.9rem; /* Reduzir ainda mais o tamanho da fonte dos botões */
+        padding: 12px 24px;
+        font-size: 0.9rem;
     }
 }

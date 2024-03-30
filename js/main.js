@@ -1,15 +1,39 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Define uma posição inicial para o botão "Não" quando a página for carregada
+    document.documentElement.style.setProperty('--x', '0.6');
+    document.documentElement.style.setProperty('--y', '0.12');
+});
+
 document.getElementById('sim-btn').addEventListener('click', function() {
+    // Aguarda 5 segundos antes de redirecionar para a página do YouTube
+    setTimeout(function() {
+        window.location.href = 'https://www.youtube.com/watch?v=KDrJY481yDE';
+    }, 5000); // 5000 milissegundos = 5 segundos
     alert('Obrigado amor!');
 });
 
-document.getElementById('nao-btn').addEventListener('click', function() {
-    // Gera uma posição aleatória
-    const randomX = Math.random() * (window.innerWidth - 100); // 100 é a largura do botão
-    const randomY = Math.random() * (window.innerHeight - 50); // 50 é a altura do botão
 
-    // Define a nova posição
-    this.style.position = 'absolute';
-    this.style.left = randomX + 'px';
-    this.style.top = randomY + 'px';
-    
-});
+// Verificando se o dispositivo é móvel
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+    // Dispositivo móvel
+    document.getElementById('nao-btn').addEventListener('click', function() {
+        // Gera uma nova posição aleatória quando o botão é clicado
+        const randomX = Math.random();
+        const randomY = Math.random();
+
+        // Define as variáveis CSS para a nova posição aleatória
+        document.documentElement.style.setProperty('--x', randomX);
+        document.documentElement.style.setProperty('--y', randomY);
+    });
+} else {
+    // Desktop
+    document.getElementById('nao-btn').addEventListener('mouseover', function() {
+        // Gera uma nova posição aleatória quando o mouse passa sobre o botão
+        const randomX = Math.random();
+        const randomY = Math.random();
+
+        // Define as variáveis CSS para a nova posição aleatória
+        document.documentElement.style.setProperty('--x', randomX);
+        document.documentElement.style.setProperty('--y', randomY);
+    });
+}
