@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%; /* Reduzir a largura para que o conteúdo se ajuste melhor em dispositivos móveis */
+    text-align: center;
+    padding-top: 30px; /* Diminuir o espaçamento superior */
+}
+
+h1 {
+    font-size: 2rem; /* Reduzir o tamanho do título para dispositivos móveis */
+    
+    color: #333;
+    
+}
+
+
+button {
+    padding: 8px 16px; /* Reduzir o preenchimento dos botões */
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Reduzir o tamanho da fonte dos botões */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* Adicionar uma consulta de mídia para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%; /* A largura total para dispositivos móveis */
+    }
+
+    h1 {
+        font-size: 1.9rem; /* Reduzir ainda mais o tamanho do título para dispositivos móveis */
+    }
+
+    button {
+        padding: 12px 24px; /* Reduzir ainda mais o preenchimento dos botões */
+        font-size: 0.9rem; /* Reduzir ainda mais o tamanho da fonte dos botões */
+    }
+}
