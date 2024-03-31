@@ -12,28 +12,24 @@ document.getElementById('sim-btn').addEventListener('click', function() {
     alert('Obrigado amor!');
 });
 
+// Função para definir a posição aleatória do botão "Não" em dispositivos móveis
+function definirPosicaoAleatoria() {
+    // Gera uma nova posição aleatória
+    const randomX = Math.random();
+    const randomY = Math.random();
+
+    // Define as variáveis CSS para a nova posição aleatória
+    document.documentElement.style.setProperty('--x', randomX);
+    document.documentElement.style.setProperty('--y', randomY);
+}
 
 // Verificando se o dispositivo é móvel
 if (/Mobi|Android/i.test(navigator.userAgent)) {
     // Dispositivo móvel
-    document.getElementById('nao-btn').addEventListener('click', function() {
-        // Gera uma nova posição aleatória quando o botão é clicado
-        const randomX = Math.random();
-        const randomY = Math.random();
-
-        // Define as variáveis CSS para a nova posição aleatória
-        document.documentElement.style.setProperty('--x', randomX);
-        document.documentElement.style.setProperty('--y', randomY);
-    });
+    document.getElementById('nao-btn').addEventListener('click', definirPosicaoAleatoria);
 } else {
     // Desktop
     document.getElementById('nao-btn').addEventListener('mouseover', function() {
-        // Gera uma nova posição aleatória quando o mouse passa sobre o botão
-        const randomX = Math.random();
-        const randomY = Math.random();
-
-        // Define as variáveis CSS para a nova posição aleatória
-        document.documentElement.style.setProperty('--x', randomX);
-        document.documentElement.style.setProperty('--y', randomY);
+        definirPosicaoAleatoria();
     });
 }
